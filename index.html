@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+    <script src="./src/main.js" type="module"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form id="newBookForm">
+        <h2>Skriv in en ny bok</h2>
+        <label>Titel</label><input id="inputTitle" type="text">
+        <label>Författare</label><input  id="inputAuthor" type="text">
+        <div id="hiddenInput">
+        <label>Betyg</label><input id="inputRating" type="number">
+        <label>Kommentar</label><input id="inputComment" type="text"></div>
+        <label>Har du läst boken?</label><input id="inputIsRead" type="button">
+        <button type="submit" id="submitBtn">Lägg till bok</button>
+    </form>
+    <h3>Lästa böcker:</h3>
+    <div id="bookTitleWrapperRead">
+        <div id="bookContainer"></div>
+    </div>
+    <h3>Olästa böcker:</h3>
+    <div id="bookTitleWrapperNotRead">
+
+    </div>
+    <div class="modal-overlay">
+    <div id="bookInfoModule">
+        <form id="hiddenPatchForm">
+            <label>Lämna betyg:</label>
+            <input id="inputRatingPatch" type="number">
+            <label>Lämna kommentar:</label>
+            <input id="inputCommentPatch" type="text">
+            <button type="submit">Spara</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
