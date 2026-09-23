@@ -15,7 +15,7 @@ const inputRatingPatch = document.getElementById("inputRatingPatch")
 const inputCommentPatch = document.getElementById("inputCommentPatch")
 
 
-let currentBookId = null //CURRENTBOOK ID ÄR NULL
+let currentBookId = null 
 let isRead = false
 
 export function clearFormInputs() {
@@ -36,7 +36,7 @@ export function renderBookTitles(allBooks, refreshApp) {
     bookTitleWrapperRead.innerHTML = "";
     bookTitleWrapperNotRead.innerHTML = "";
     
-    for(const bookId in allBooks) { //BOOK ID DEFINIERAS
+    for(const bookId in allBooks) { 
         const ul = document.createElement("ul")
         const li = document.createElement("li")
         const p = document.createElement("p")
@@ -50,7 +50,7 @@ export function renderBookTitles(allBooks, refreshApp) {
         ul.append(li)
         li.append(p)
 
-        p.addEventListener("click", (e) => { //KLICKAR PÅ BOK, SKICKAR DENS BOOKID
+        p.addEventListener("click", (e) => { 
             e.preventDefault()
             bookInfoModule.classList.remove("hidden")
             renderBookInfo(allBooks, bookId, refreshApp)
@@ -60,7 +60,7 @@ export function renderBookTitles(allBooks, refreshApp) {
 }
 
 export function renderBookInfo(allBooks, bookId, refreshApp) {
-    currentBookId = bookId //ANGER CURRENTBOOK ID, SKICKAS TILLBAKA TILL VARIABELN GLOBALT
+    currentBookId = bookId 
     bookInfoModule.innerHTML = ""
     const book = allBooks[bookId]
 
@@ -169,7 +169,7 @@ export function allEventListeners(refreshApp) {
         const bookComment = inputCommentPatch.value
         const bookIsRead = true
 
-        const bookUpdate = new Book(currentBookId, null, null, bookIsRead, bookRating, bookComment) //HÄMTAR CURRENTBOOK ID FRÅN VARIABELN GLOBALT
+        const bookUpdate = new Book(currentBookId, null, null, bookIsRead, bookRating, bookComment) 
         
         await bookUpdate.patchBook()
 
@@ -178,5 +178,5 @@ export function allEventListeners(refreshApp) {
 
         refreshApp()
 
-    }) //HADE MYCKET PROBLEM MED DENNA LYSSNARE PGA SKICKA IN VÄRDEN
+    }) 
 }
